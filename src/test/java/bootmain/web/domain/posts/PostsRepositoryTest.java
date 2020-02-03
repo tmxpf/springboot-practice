@@ -30,10 +30,10 @@ public class PostsRepositoryTest {
         String content = "테스트 본문";
 
         postsRepository.save(Posts.builder()
-                                .title(title)
-                                .content(content)
-                                .author("tmspf2@gmail.com")
-                                .build());
+                            .title(title)
+                            .content(content)
+                            .author("tmspf2@gmail.com")
+                            .build());
 
         List<Posts> postList = postsRepository.findAll();
 
@@ -47,10 +47,10 @@ public class PostsRepositoryTest {
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
 
         postsRepository.save(Posts.builder()
-                .title("title")
-                .content("content")
-                .author("tmspf2@gmail.com")
-                .build());
+                            .title("title")
+                            .content("content")
+                            .author("tmspf2@gmail.com")
+                            .build());
 
         List<Posts> postsList = postsRepository.findAll();
 

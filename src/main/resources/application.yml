@@ -19,6 +19,14 @@ spring:
     store-type: jdbc
   profiles:
     include: oauth
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: test
+#            client-secret: test
+#            scope: email, profile
 
 server:
   port: 80

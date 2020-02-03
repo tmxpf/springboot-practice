@@ -6,18 +6,18 @@ import bootmain.service.posts.PostsService;
 import bootmain.web.dto.PostsListResponseDto;
 import bootmain.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.bind.Element;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
@@ -64,6 +64,9 @@ public class DexController {
     private void getURLData() throws Exception {
         URL url = new URL("https://www.naver.com/");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+        RestTemplate rest = new RestTemplate();
+        ResponseEntity<String> result = rest.postForEntity("https://www.naver.com/", null, String.class);
 
         BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String temp;
