@@ -2,7 +2,6 @@ package bootmain.config.auth;
 
 import bootmain.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
-import net.minidev.json.JSONObject;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
