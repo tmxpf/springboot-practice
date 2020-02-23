@@ -49,7 +49,8 @@ public class PostsRepositoryTest {
         postsRepository.save(Posts.builder()
                             .title("title")
                             .content("content")
-                            .author("tmspf2@gmail.com")
+//                            .author("tmspf2@gmail.com")
+                            .author("author")
                             .build());
 
         List<Posts> postsList = postsRepository.findAll();
